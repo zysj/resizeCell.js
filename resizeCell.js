@@ -15,10 +15,10 @@ define(['jquery'],
     		}else{
     			this.isLoaded = true;
     		}
-    	}else{//ngTableService使用情况
+    	}else{//其它使用情况
     		if($('[resize-cell]').length==0){
-    			this.$table = $('[ng-table] table');
-        		this.$el = this.$table.parent().parent();
+    			this.$el = $('[resize-cell]');
+        		this.$table = this.$el.find('table');
     		}else{
     			this.isLoaded = true;
     		}
