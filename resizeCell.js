@@ -9,15 +9,17 @@ define(['jquery'],
     	this.$body = $('body');
     	//指令使用情况
     	if(selector){
-    		if($('.resize-div').length==0){
-    			this.$el = $(selector);
+			var $el = $(selector);
+    		if($el.find('.resize-div').length==0){
+    			this.$el = $el;
     			this.$table = this.$el.find('table');
     		}else{
     			this.isLoaded = true;
-    		}
+			}
+			$el = null;
     	}else{//其它使用情况
     		if($('[resize-cell]').length==0){
-    			this.$el = $('[resize-cell]');
+    			this.$el = $('[ng-table] table');
         		this.$table = this.$el.find('table');
     		}else{
     			this.isLoaded = true;
